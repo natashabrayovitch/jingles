@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , Redirect} from 'react-router-dom';
 import getTechnologies from './technologies-get';
 
 export default class Details extends Component {
@@ -15,16 +15,21 @@ export default class Details extends Component {
     componentDidMount() {
         let technologyId = this.props.match.params.technologyId;
         let technology = getTechnologies()
-            .find((technology)  => technology.id === technologyId);
+            .find((technology) => technology.id === technologyId);
         this.setState({ technology });
     }
 
     render() {
-        return (
-            <div>
-                <h1>{this.state.technology.name} of London @ Andrew Jose</h1>
-                <Link to='/'>Back to home page</Link>
-            </div>
-        );
+        if (this.state.technology === undefined) {
+            return <Redirect to='/not-found' />
+        } else {
+
+            return (
+                <div>
+                    <h1>{this.state.technology.name} of London @ Andrew Jose</h1>
+                    <Link to='/'>Back to home page</Link>
+                </div>
+            );
+        }
     }
 }
