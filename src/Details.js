@@ -23,11 +23,15 @@ export default class Details extends Component {
         if (this.state.technology === undefined) {
             return <Redirect to='/not-found' />
         } else {
-
-            return (
+             return (
                 <div>
-                    <h1>{this.state.technology.name} of London @ Andrew Jose</h1>
-                    <Link to='/'>Back to home page</Link>
+                    <h1>{this.state.technology.name} Jingles of London @ Andrew Jose</h1>
+                    <h1>Look Book</h1>
+                    <div>{this.state.technology.details}</div>
+                    <img 
+                    src={this.state.technology.logo}
+                    alt={this.state.technology.name} />
+                    <Link to='/'>see more</Link>
                 </div>
             );
         }
