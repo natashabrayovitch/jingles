@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
-import { Link , Redirect} from 'react-router-dom';
-import getTechnologies from './technologies-get';
+import { Link, Redirect } from 'react-router-dom';
+import getTechnologies from '../technologies-get';
+import './Details.css';
 
 export default class Details extends Component {
 
@@ -23,15 +24,20 @@ export default class Details extends Component {
         if (this.state.technology === undefined) {
             return <Redirect to='/not-found' />
         } else {
-             return (
-                <div>
+            return (
+                <div className='Details'>
                     <h1>{this.state.technology.name} Jingles of London @ Andrew Jose</h1>
                     <h1>Look Book</h1>
-                    <div>{this.state.technology.details}</div>
-                    <img 
-                    src={this.state.technology.logo}
-                    alt={this.state.technology.name} />
-                    <Link to='/'>see more</Link>
+                    <div className='content'>
+                        <div className='text'>
+                        <div>{this.state.technology.details}</div>
+                        <img
+                            className='image'
+                            src={this.state.technology.logo}
+                            alt={this.state.technology.name} />
+                        </div>
+                    </div>
+                    <Link to='/'>Back to home page</Link>
                 </div>
             );
         }
