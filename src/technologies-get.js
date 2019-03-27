@@ -4,6 +4,7 @@ import awCollage from './aw-collage.png';
 import denimCollage from './denim-collage.png';
 
 
+
 export default function getTechnologies() {
     return [
         { id: 'ss18', name: 'SS18', logo: ssCollage , details: 'Summer Solstice 2018 collection was all about the heat.Fantastically we were blessed with the most incredible summer. This collection has absolutely all the celebration of it and is down way pride to it. The wonderful film is created by Ed Mathews .        Queeny is the model with fantastic crop celebrates the return of the afro.        Short blond hair is a touch of the “Mia Farrow” to it . The interpretation of Parisian girl with the gentle softly waved bob, the freckles as the result of a long hot summer bringing out the glow and the beauty in the face and the skin. Simple blond layered haircut with the touch of pink or touch of salmon in the quality of the hair which is so beautiful.The finish off with the showstop of the return of the perms: bright red hair with softly permed curls (front cover in many countries world wide).'},
