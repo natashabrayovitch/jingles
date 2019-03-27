@@ -11,6 +11,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <p className='code'>Jingles Hair education</p>
           <Switch>
             <Route exact path='/' component={Technologies} />
             <Route exact path='/not-found' component={NotFound} />
