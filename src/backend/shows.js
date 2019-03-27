@@ -11,6 +11,5 @@ module.exports = function getShows() {
         id: 'denim18',
         name: 'Denim18',
         details: 'Denim collection 2018. The summer special collection took 3 of the girls who featured in Winter Solstice collection . We started with the “Double Denim“ summer celebration where we reinvented three different looks. The main inspiration came from the summer fresh feeling set against the very best of the summer expression pictures that David Hockney made while he was living in California.'
-    }
-    ]
+    }];
 }
