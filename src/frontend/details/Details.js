@@ -1,41 +1,40 @@
 
-import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import getTechnologies from '../technologies-get';
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+import getShows from '../shows';
+import './Details.css';
 
-export default class Details extends Component {
+export default class Details extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            technology: {}
+            show: {}
         };
     }
 
     componentDidMount() {
-        let technologyId = this.props.match.params.technologyId;
-        let technology = getTechnologies()
-            .find((technology) => technology.id === technologyId);
-        this.setState({ technology });
+        let show = getShows()
+            .find(show => show.id === this.props.match.params.showId);
+        this.setState({ show });
     }
 
     render() {
-        if (this.state.technology === undefined) {
-            return <Redirect to='/not-found' />
-        } else {
-            return (
-                <div className='Details'>
-                    <h1>{this.state.technology.name} Jingles of London @ Andrew Jose</h1>
-                    <h1>Look Book</h1>
-                    <div className='container'>
-                        <div>{this.state.technology.details}</div>
-                        <img
-                            src={this.state.technology.logo}
-                            alt={this.state.technology.name} />
+        let show = this.state.show;
+        return (
+            this.state.show ?
+                <div className='details'>
+                    <h1>{show.title}</h1>
+                    <div className='details-content'>
+                        <h3 className='details-content-synopsis'>
+                            {show.synopsis}
+                        </h3>
+                        <div className='details-content-cover'>
+                            <img src={show.image} alt={show.title} />
+                        </div>
                     </div>
-                    <Link to='/'>Back to home page</Link>
-                </div>
-            );
-        }
+                </div> :
+                <Redirect to='/not-found' />
+        )
     }
 }
