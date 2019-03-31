@@ -8,9 +8,7 @@ export default class Gallery extends React.Component {
     
     componentDidMount() {
         fetch('/rest/shows')
-            .then(function (response) {
-                return response.json();
-            })
+            
             .then(function (myJson) {
                 console.log(myJson);
             });
