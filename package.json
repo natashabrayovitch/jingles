@@ -13,7 +13,8 @@
   },
   "scripts": {
     "start": "npm-run-all -s build _start-cold-server",
-    "start-dev": "npm-run-all -p start-frontend start-backend",
+    "start-db": "mongod",
+    "start-dev": "npm-run-all -p start-db start-backend start-frontend",
     "start-frontend": "react-scripts start",
     "start-backend": "nodemon src/backend/app.js",
     "build": "react-scripts build",
