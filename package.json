@@ -6,7 +6,6 @@
     "express": "^4.16.4",
     "mongodb": "^3.2.3",
     "nodemon": "^1.17.5",
-    "npm-run-all": "^4.1.5",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1",
@@ -14,26 +13,16 @@
   },
   "scripts": {
     "start": "npm-run-all -s build _start-backend",
-    "start-dev": "npm-run-all -p start-db start-backend start-frontend",
-    "start-db": "mongod",
-    "start-frontend": "react-scripts start",
-    "start-backend": "nodemon src/backend/app.js",
+    "start-dev": "npm-run-all -p _start-backend _start-frontend",
+    "_start-db": "mongod",
+    "_start-frontend": "react-scripts start",
+    "_start-backend": "nodemon src/backend/app.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "_start-cold-server": "node src/backend/app.js"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   },
-  "proxy": "http://localhost:3001",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "proxy": "http://localhost:3001"
 }
