@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "mongodb": "^3.2.3",
     "nodemon": "^1.17.5",
@@ -12,8 +13,8 @@
     "react-scripts": "^2.1.8"
   },
   "scripts": {
-    "start": "npm-run-all -s build _start-backend",
-    "start-dev": "npm-run-all -p _start-backend _start-frontend",
+    "start": "NODE_ENV=production npm-run-all -s build _start-backend",
+    "start-dev": "npm-run-all -p _start-db _start-frontend _start-backend",
     "_start-db": "mongod",
     "_start-frontend": "react-scripts start",
     "_start-backend": "nodemon src/backend/app.js",
@@ -24,5 +25,11 @@
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
